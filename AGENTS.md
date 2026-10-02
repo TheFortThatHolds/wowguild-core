@@ -12,6 +12,11 @@ Read PUBLIC_BOUNDARY.md, PLAN.md and SESSION_HANDOFF.md before editing.
 - Stay guild-agnostic: configure guild/game/channel/region/realm; never hardcode
   a guild or require the project author's accounts. Hosting location does not
   grant Blizzard access or reduce permitted member addon sync coverage.
+- This is post-join tooling: no recruitment or in-game guild admission workflow.
+  Invitations authorize Core access, not membership in the actual WoW guild.
+- Complement existing guild/raid/loot addons through optional reviewed data
+  adapters. Keep GM guild sync separate from the GM's personal character sync.
+  No whole addon database imports or automatic replacement of existing tools.
 - Provide software and technical operator setup instructions, not a course,
   consulting program or centrally operated account platform. Guild-managed
   hosting is optional and needs tenant isolation, export and retention tests.

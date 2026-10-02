@@ -23,6 +23,14 @@ Use the player repository's authoritative
 [hosting design](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/HOSTING.md)
 and [API capability notes](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/BLIZZARD_DATA.md).
 
+Post-join scope: guild admission/recruitment stays with the guild's existing
+process. Current invitation/membership schemas manage Core access for existing
+members, not in-game guild invites. Complement current guild/raid/loot addons;
+use optional reviewed adapters, not replacement workflows. Personal `/wowcore sync`
+and proposed GM `/wowguild sync` need distinct collectors/payloads/scopes
+and destinations. See the
+[interoperability design](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/ADDON_INTEROP.md).
+
 ## Stages
 
 ### 0. Public foundation — current checkpoint
@@ -52,6 +60,8 @@ authorize membership. No keys or production networking needed for these tests.
 - [ ] Implement bounded guild roster indexes and permission-filtered views.
 - [ ] Preserve source Core/character identity, channel and observation freshness.
 - [ ] Report unavailable/stale sources honestly; never invent current facts.
+- [ ] Specify guild observation schemas and restricted views separately from
+  personal snapshots; game client visibility does not mean public Core visibility.
 - [ ] Review current official deployment/auth APIs and document operator setup.
 
 Gate: guild state persists with all local PCs off; unauthorized users cannot
@@ -87,6 +97,10 @@ Per-game capability tests must distinguish unsupported from empty/stale data.
   for members, their own sign-in/consent, and operator billing/recovery duties.
 - [ ] Test install, pair, `/wowcore sync`, invitation, sharing and leaving.
 - [ ] Meter optional voice/analysis with explicit payer and hard allowances.
+- [ ] Test optional guild-addon exports/adapters without altering foreign state,
+  taking over their controls or importing private member/officer content broadly.
+- [ ] Prepare a generic guild addon package for a separately authorized CurseForge
+  author submission; no catalog API application/download manager is required now.
 
 Gate: guilds can offer the tools without receiving a player's Cloudflare keys or
 manually constructing each sheet. A member sees one companion, retains private

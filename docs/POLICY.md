@@ -22,6 +22,11 @@ implemented by this kernel.
 
 ## Narrow initial roles
 
+These are Guild Core permissions for people already in the guild. The existing
+invitation/membership objects govern Core access, not in-game recruitment,
+guild invites or promotions. The guild's existing admission process is outside
+this project's scope.
+
 | Action | Member | Officer | Owner |
 | --- | --- | --- | --- |
 | Read guild plans | yes | yes | yes |
@@ -55,6 +60,13 @@ results or existing active/left memberships fail with `membership_conflict`.
 Re-inviting an existing/left member needs explicit version/rejoin semantics.
 
 ## Supplement existing tools
+
+Keep personal sync and GM guild sync separate in schemas, collectors, credentials,
+storage and visibility. Existing quest/navigation/raid/loot addons retain their
+jobs. Optional adapters use supported interfaces/exports or narrowly reviewed
+version-specific state, not entire SavedVariables dumps. Compatibility is not
+implemented yet; see the authoritative
+[interoperability design](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/ADDON_INTEROP.md).
 
 An existing Discord bot or guild website can be connected through a future
 permission-limited adapter. Do not replace that bot or assume its private server
