@@ -26,9 +26,9 @@ Verification: all 32 existing local policy tests, both syntax checks and package
 dry-runs passed. Source policy code was not changed; these are regression checks,
 not addon coexistence, CurseForge approval or real-client integration evidence.
 
-Optional CurseForge catalog lookup may help discover compatible toolkits and
-source documentation, distinct from ingesting player state or distributing files.
-This benefit is preserved in player docs/ADDON_INTEROP.md; no API access is enabled.
+CurseForge catalog lookup is deferred separate addon-builder research tooling,
+not a runtime Guild Core feature or source of player state. This distinction is
+preserved in player docs/ADDON_INTEROP.md; no API access is enabled.
 
 ## 2026-10-02: guild-agnostic optional member hosting
 
