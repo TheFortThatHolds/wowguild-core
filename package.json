@@ -1,0 +1,15 @@
+{
+  "name": "@wow-core/guild-policy",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Platform-neutral membership and planning policy for a guild-owned Core",
+  "exports": { ".": "./src/guild.mjs" },
+  "files": ["src/", "docs/"],
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "@wow-core/contracts": "git+https://github.com/TheFortThatHolds/wow-core.git#50689536f78ac507a643152325dc7586060713c5"
+  },
+  "scripts": { "test": "node --test", "check": "node --check src/guild.mjs" }
+}
