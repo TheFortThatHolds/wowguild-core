@@ -1,10 +1,12 @@
 # WoW Guild Core
 
-A guild-owned coordination tool for independently owned WoW Cores.
+A guild-agnostic coordination tool connecting members' WoW Cores.
 
-The guild deploys this tool into its own Cloudflare account. Players deploy
-[WoW Core](https://github.com/TheFortThatHolds/wow-core) into their own accounts
-and choose which characters and information to share with the guild.
+The guild deploys this tool into its own Cloudflare account. Players can deploy
+[WoW Core](https://github.com/TheFortThatHolds/wow-core) themselves or opt into
+member spaces hosted by a willing guild operator, without opening Cloudflare.
+Either way, they choose which characters and information to share. Configure
+the guild, game/channel, region and realm; there is no built-in guild identity.
 
 ## What this tool is for
 
@@ -19,12 +21,19 @@ opening a whole personal database. Private conversations and notes are not
 guild-visible by default. Leaving revokes future access without deleting the
 player's personal Core; retention of already-shared information must be explicit.
 
+Hosted mode keeps member spaces separate in the application, but the operator
+controls the server and can technically access stored data. Disclose that before
+onboarding and provide an export/migration path. Hosting alone does not reduce
+permitted member sync data or authorize protected Blizzard account access.
+See the authoritative player-side [hosting design](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/HOSTING.md)
+and [Blizzard data notes](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/BLIZZARD_DATA.md).
+
 ## Setup approach
 
-This is software for guilds to offer, not a course, consulting program or hosted
-account platform. A guild operator, developer or AI coding agent can deploy and
-configure it with their own accounts. Technical setup documentation will specify
-the required resources, configuration and player-Core connection contract.
+This is software for guilds to offer, not a course, consulting program or
+centrally operated account platform. A guild operator, developer or AI coding
+agent can configure it with their own accounts. Technical setup documentation
+will specify resources, configuration and the player-Core connection contract.
 
 The cloud service must not depend on the guild leader's PC remaining on.
 
@@ -36,8 +45,9 @@ are consumed from a pinned commit of wow-core, not duplicated here. See
 [docs/POLICY.md](docs/POLICY.md).
 
 There is no deployable runtime, network authentication, persistent membership,
-real federation or installer yet. An existing guild bot can be complemented by
-a future scoped adapter; this project does not replace or connect one today.
+real federation, hosted member provisioning or installer yet. An existing guild
+bot can be complemented by a future scoped adapter; this project does not replace
+or connect one today.
 
 Development checks (Node.js 22 or later): `npm ci --ignore-scripts --no-audit
 --no-fund`, `npm run check`, then `npm test`. The dependency is public and pinned;
