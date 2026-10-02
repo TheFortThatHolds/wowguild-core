@@ -8,9 +8,15 @@ member spaces hosted by a willing guild operator, without opening Cloudflare.
 Either way, they choose which characters and information to share. Configure
 the guild, game/channel, region and realm; there is no built-in guild identity.
 
+This tool is for people who have already joined their guild through its existing
+process. Core access invitations are not recruitment or in-game guild invites.
+Existing guild, raid and loot addons retain their jobs; optional data adapters
+are planned, not implemented. See the
+[addon interoperability design](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/ADDON_INTEROP.md).
+
 ## What this tool is for
 
-- Guild invitations, membership and officer permissions.
+- Core access invitations and officer permissions for existing guild members.
 - A unified roster of permission-filtered character views, not a second source
   of character truth.
 - Shared guild plans and coordination through the same player-facing companion.

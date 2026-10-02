@@ -1,5 +1,35 @@
 # WoW Guild Core — public project checkpoint
 
+## 2026-10-02: post-join scope and existing-addon coexistence
+
+The guild's recruitment/admission process is out of scope. This tool serves
+existing guild members; current Core invitation/membership policy is only the
+software-access relationship. Do not implement an in-game joining/recruitment
+tool based on earlier wording. Personal and GM guild sync are separate tools
+and data paths, even if packaging/transport is shared. GM guild collection and
+administrative actions are also separate concerns.
+
+Complement existing guild/raid/loot addons and bots. Optional data adapters must
+be allowlisted, versioned, bounded, provenance/freshness-aware and privacy-gated;
+no wholesale SavedVariables import or replacement of existing workflows. Player
+docs/ADDON_INTEROP.md is the authoritative research/design. No compatibility is
+claimed from source inspection alone. Current policy code/dependency is unchanged.
+
+CurseForge author submission and catalog API access are separate. The API is not
+needed for current local addon interoperability; its caching/key-sharing/quotas
+and distribution terms require review for any future catalog/download feature.
+No form was submitted, terms accepted, addon installed/modified, third-party code
+copied, actual guild data collected or new service deployed. Next implementation
+gate remains authenticated bounded storage before real adapters/federation.
+
+Verification: all 32 existing local policy tests, both syntax checks and package
+dry-runs passed. Source policy code was not changed; these are regression checks,
+not addon coexistence, CurseForge approval or real-client integration evidence.
+
+CurseForge catalog lookup is deferred separate addon-builder research tooling,
+not a runtime Guild Core feature or source of player state. This distinction is
+preserved in player docs/ADDON_INTEROP.md; no API access is enabled.
+
 ## 2026-10-02: guild-agnostic optional member hosting
 
 Latest requirements supersede mandatory independent Cloudflare accounts below.
