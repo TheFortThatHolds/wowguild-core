@@ -10,6 +10,16 @@ deployed guild service or an authentication system. Principals, current stored
 membership/invitation records, configured guild identity and server clock must
 come from a trusted authenticated adapter, never request-body/Discord/model claims.
 
+Core IDs are logical identities, not Cloudflare accounts. Optional guild-hosted
+members still have separate personal Core IDs and the same source grants. The
+trusted adapter must resolve member identity from authentication, not a requested
+tenant/character name. Source filtering applies even when services share a host.
+Application roles cannot conceal data from the infrastructure owner; disclose
+that hosted-mode tradeoff before onboarding. The authoritative
+[hosting design](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/HOSTING.md)
+defines isolation, export, departure, billing and migration gates. None are
+implemented by this kernel.
+
 ## Narrow initial roles
 
 | Action | Member | Officer | Owner |
@@ -50,6 +60,10 @@ An existing Discord bot or guild website can be connected through a future
 permission-limited adapter. Do not replace that bot or assume its private server
 protocol. Blizzard API observations do not prove Core ownership or grant guild
 membership. A Discord mention is not personal data-sharing consent.
+Configure any guild and supported game/region/realm. Public roster imports are
+unclaimed observations; GM rank is not permission for protected account data.
+Member OAuth and allowed addon sync work independently of hosting choice; see
+[Blizzard capability notes](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/BLIZZARD_DATA.md).
 
 No Discord integration, Blizzard client, public network endpoint, persistent
 database, signed peer authentication or remote-fetch capability is implemented.

@@ -1,5 +1,34 @@
 # WoW Guild Core — public project checkpoint
 
+## 2026-10-02: guild-agnostic optional member hosting
+
+Latest requirements supersede mandatory independent Cloudflare accounts below.
+Members may self-host or choose a distinct logical member Core hosted by the
+guild operator. Hosting is optional, never one shared owner account. Configure
+any guild/game/channel/region/realm. Disclose operator access to server-stored
+data; test tenant isolation, budgets, export/migration and departure retention
+before rollout. See the player repository's docs/HOSTING.md for the single
+authoritative hosting design.
+
+Blizzard's official Retail/Classic references list guild profile, roster,
+activity and achievements, with no documented GM-only permission. Protected
+member data requires that member's own wow.profile authorization, not GM rank.
+Hosted members do not need personal developer clients; host app credentials and
+member authorization are distinct. Public API observations alone cannot claim
+characters or create authorized memberships. Coverage is game/namespace-specific;
+Forever beta/release coverage is not verified. See player docs/BLIZZARD_DATA.md.
+
+Documentation/design change only: policy code and pinned contract dependency are
+unchanged, with 16 synthetic tests in each repository. No provisioning, data
+collector, multi-tenant auth/storage, migration, Discord adapter or deployment
+has been built. Next: authenticated storage adapters with exact identity mapping,
+cross-tenant denial tests and bounded platform call budgets. Update this same
+handoff as those gates are implemented and verified.
+
+Verification for this checkpoint: 32 local tests, both syntax checks and both
+package dry-runs passed. Reviewed public diffs/package file lists; local Markdown
+links, whitespace and private-value scans passed. No runtime service was changed.
+
 ## 2026-10-02: policy kernel implemented
 
 This section supersedes the planning-only checkpoint below. MIT is approved and
