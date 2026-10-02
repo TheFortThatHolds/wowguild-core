@@ -34,6 +34,12 @@ deployments, with fail-closed network tests and measured platform call budgets.
 Do not expose the policy functions as an unauthenticated HTTP API or treat these
 tests as real-client/federation evidence. Save progress in this same handoff.
 
+Both first implementation PRs are merged: wow-core #1 and wowguild-core #1.
+Their GitHub PR CI checks passed (player run 37063231792, guild run 37063886259).
+There are 32 passing synthetic policy tests across the two projects, not an
+end-to-end deployment test. Ordinary member onboarding should approve a clear
+sharing preset once, not make members select fields again on every sync.
+
 ## 2026-10-02: public foundation
 
 Repository: https://github.com/TheFortThatHolds/wowguild-core
