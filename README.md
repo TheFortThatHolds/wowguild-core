@@ -30,8 +30,18 @@ The cloud service must not depend on the guild leader's PC remaining on.
 
 ## Current status
 
-Planning/documentation foundation only. There is no deployable runtime, working
-guild invitation, federation or installer in this repository yet.
+Version-1 invitation, membership and guild-planning policy functions with
+synthetic tests. The authoritative character/grant schemas and projection kernel
+are consumed from a pinned commit of wow-core, not duplicated here. See
+[docs/POLICY.md](docs/POLICY.md).
+
+There is no deployable runtime, network authentication, persistent membership,
+real federation or installer yet. An existing guild bot can be complemented by
+a future scoped adapter; this project does not replace or connect one today.
+
+Development checks (Node.js 22 or later): `npm ci --ignore-scripts --no-audit
+--no-fund`, `npm run check`, then `npm test`. The dependency is public and pinned;
+these policy tests need no operator credentials, Discord access or model calls.
 
 Read [PLAN.md](PLAN.md), [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md) and
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md) before implementation. Only generic
@@ -39,6 +49,6 @@ public-facing code, synthetic fixtures and setup instructions belong here.
 
 ## License
 
-A reusable-code license has not been selected. Public visibility alone is not
-an open-source license. Resolve licensing before importing private code or
-distributing a reusable release.
+MIT; see [LICENSE](LICENSE). The public tool stays freely reusable. Optional
+setup/seed offerings must not restrict the rights granted by the code license.
+Private-source extraction still requires provenance and privacy review.

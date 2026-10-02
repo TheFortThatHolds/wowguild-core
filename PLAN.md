@@ -18,16 +18,16 @@ platform or compulsory self-service wizard is out of scope.
 
 - [x] Establish the public repository, ownership boundary and durable plan.
 - [x] Keep public artifacts generic and exclude personal data/configuration.
-- [ ] Select a reusable-code license before importing/distributing code.
+- [x] MIT license selected for the generic public tool.
 
 ### 1. Contract and authorization tests, before network access
 
-- [ ] Define versioned player/guild interoperability contracts jointly with
+- [x] Define versioned player/guild interoperability contracts jointly with
   wow-core. Give each definition one authoritative home, not drifting copies.
-- [ ] Define invitations, approvals, membership roles and scoped sharing grants.
-- [ ] Use stable Core identities independent of a mutable domain/key.
-- [ ] Default to no character access until sharing is explicitly granted.
-- [ ] Add synthetic tests for owner/member/officer/outsider and game isolation.
+- [x] Define invitations, approvals, membership roles and scoped sharing grants.
+- [x] Reference stable Core identities independent of a mutable domain/key.
+- [x] Default to no character access until sharing is explicitly granted.
+- [x] Add synthetic tests for owner/member/officer/outsider and game isolation.
 
 Gate: invented players/guilds prove denied access, scoped reads, separate planning
 writes and no transfer of character ownership. A guild name in a snapshot cannot
@@ -72,7 +72,7 @@ state on leaving and cannot spend an unlimited shared inference budget.
 
 ## Pending rollout decisions
 
-- Reusable-code license and any private-source extraction permissions.
+- Any private-source extraction permissions and provenance/privacy review.
 - Initial sharing preset, officer rights and shared-history/cache retention.
 - Authentication/federation mechanisms after platform documentation review.
 - Optional inference payer and hard default allowances.
