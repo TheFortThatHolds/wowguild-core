@@ -31,6 +31,29 @@ and proposed GM `/wowguild sync` need distinct collectors/payloads/scopes
 and destinations. See the
 [interoperability design](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/ADDON_INTEROP.md).
 
+## Coordinated execution track
+
+The player repository implements M1 authentication/storage/sync foundation first;
+M2 secure provisioning/hosted member sign-in/Blizzard OAuth follows. This guild
+repository owns M3 persistent membership/plans. M4 adds authenticated federation;
+M5 connects full allowed snapshots, sheets, companion and one voice; M6 adds a
+separate GM guild collector and reviewed optional addon adapters; M7 proves
+fresh-operator/end-to-end/real-client release gates. Keep stages/acceptance below.
+
+The player M1 first slice is locally implemented/tested, not deployed: server-mapped
+machine credentials, isolated SQLite Durable Objects, bounded canonical roster,
+initial strict snapshots, template onboarding, note preservation, stale rejection
+and persistent mutation limits. It is not human OAuth or a guild credential.
+See [player runtime limits/evidence](https://github.com/TheFortThatHolds/wow-core/blob/main/docs/RUNTIME.md).
+This repository's guild policy is unchanged and still has no persistent runtime.
+Keep its immutable contract dependency pin until an actual contract change needs it.
+
+Next guild implementation gate: after secure player provisioning/identity,
+build atomic persistent current membership/invitation transitions and indexed
+guild planning reads/writes, enforcing the existing policy outside the model.
+No public roster import, observed guild name or pairing key may grant officer
+privileges. Save checked progress in this same plan and SESSION_HANDOFF.
+
 ## Stages
 
 ### 0. Public foundation — current checkpoint

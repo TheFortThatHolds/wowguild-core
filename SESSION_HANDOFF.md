@@ -1,5 +1,27 @@
 # WoW Guild Core — public project checkpoint
 
+## 2026-10-02: staged runtime execution begins in player Core
+
+Execution track is M1 player storage/sync, M2 secure provisioning/member sign-in/
+OAuth, M3 guild persistent membership/plans, M4 authenticated federation,
+M5 public full collectors/sheets/companion/voice, M6 separate GM collector and
+data-first addon adapters, M7 operator/real-client release gates.
+
+Player M1 first slice is original generic implementation: server-mapped hashed
+machine credentials, per-Core SQLite Durable Objects, bounded canonical roster,
+initial validated snapshots with second names, automatic empty template modules,
+stale/idempotency handling, manual notes preserved and durable mutation caps.
+Locally tested with actual Cloudflare Miniflare runtime and restart/concurrency/
+isolation, plus SQLite query/index instrumentation at 500 synthetic characters.
+No production deployment, private-source import, real game/voice or full allowed
+data coverage claim. See player docs/RUNTIME.md for limits and remaining gates.
+
+Guild code remains unchanged, including the authoritative immutable contract pin.
+All 16 guild policy regressions passed. Its runtime, human identity, actual
+provisioning, secure peer transport, GM collector and adapters remain unbuilt.
+Next: secure player provisioning then guild atomic membership/planning storage.
+Never use player pairing credentials as guild/member/officer authorization.
+
 ## 2026-10-02: post-join scope and existing-addon coexistence
 
 The guild's recruitment/admission process is out of scope. This tool serves
